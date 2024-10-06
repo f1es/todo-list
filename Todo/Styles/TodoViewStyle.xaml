@@ -1,0 +1,144 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:v="clr-namespace:Todo.Views">
+
+    <Style x:Key="TrashButtonStyle" TargetType="{x:Type Button}">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="BorderBrush" Value="Transparent"/>
+
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="Transparent">
+                        <ContentPresenter/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="Transparent"/>
+                <Setter Property="BorderBrush" Value="Transparent"/>
+            </Trigger>
+        </Style.Triggers>
+
+    </Style>
+
+    <Style x:Key="TrashViewboxStyle" TargetType="{x:Type Viewbox}">
+
+        <Setter Property="Height" Value="32"/>
+        <Setter Property="Width" Value="32"/>
+
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Height" Value="34"/>
+                <Setter Property="Width" Value="34"/>
+            </Trigger>
+        </Style.Triggers>
+
+    </Style>
+
+    <Style x:Key="TodoTextBlockStyle" 
+           TargetType="{x:Type TextBlock}">
+
+        <Setter Property="Foreground" Value="Black"/>
+        <Setter Property="FontSize" Value="14"/>
+
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding IsChecked, ElementName=IsCompleted}" Value="True">
+                <Setter Property="TextDecorations" Value="Strikethrough"/>
+            </DataTrigger>
+        </Style.Triggers>
+        
+    </Style>
+
+    <Style x:Key="TodoBorderStyle"
+           TargetType="{x:Type Border}">
+
+        <Setter Property="Background">
+            <Setter.Value>
+                <LinearGradientBrush EndPoint="1,1" StartPoint="0,2">
+                    <GradientStop Color="#FFEDF2F3" Offset="0.1"/>
+                    <GradientStop Color="#FFAFAFAF" Offset="3"/>
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding IsChecked, ElementName=IsAbadoned}" Value="True">
+                <Setter Property="Background" Value="#FF652F2F"/>
+            </DataTrigger>
+
+            <DataTrigger Binding="{Binding IsChecked, ElementName=IsCompleted}" Value="True">
+                <Setter Property="Background">
+                    <Setter.Value>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FF5F9654" Offset="0.1"/>
+                            <GradientStop Color="#FF3A6939" Offset="3"/>
+                        </LinearGradientBrush>
+                    </Setter.Value>
+                </Setter>
+            </DataTrigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="CompletedCheckBoxStyle" TargetType="{x:Type CheckBox}">
+        <Setter Property="Foreground" Value="Black"/>
+        <Setter Property="FontFamily" Value="\Fonts\Comfortaa-SemiBold.ttf#Comfortaa SemiBold"/>
+
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="CheckBox">
+                    <BulletDecorator Background="Transparent">
+                        <BulletDecorator.Bullet>
+                            <Border x:Name="Border" Width="15" Height="15" BorderBrush="Black" BorderThickness="2">
+                                <Path x:Name="CheckMark" Visibility="Collapsed" Stroke="Black" StrokeThickness="2" Data="M 0 5 L 5 10 L 10 0"/>
+                            </Border>
+                        </BulletDecorator.Bullet>
+                        <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5,0,0,0"/>
+                    </BulletDecorator>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter TargetName="CheckMark" Property="Visibility" Value="Visible"/>
+                        </Trigger>
+                        <Trigger Property="IsChecked" Value="False">
+                            <Setter TargetName="CheckMark" Property="Visibility" Value="Collapsed"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+
+    </Style>
+
+    <Style x:Key="FailedCheckBoxStyle" TargetType="{x:Type CheckBox}">
+        <Setter Property="Foreground" Value="Black"/>
+        <Setter Property="FontFamily" Value="\Fonts\Comfortaa-SemiBold.ttf#Comfortaa SemiBold"/>
+
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="CheckBox">
+                    <BulletDecorator Background="Transparent">
+                        <BulletDecorator.Bullet>
+                            <Border x:Name="Border" Width="15" Height="15" BorderBrush="Black" BorderThickness="2">
+                                <Path x:Name="CheckMark" Visibility="Collapsed" Stroke="Black" StrokeThickness="2" Data="M 0 0 L 10 10 M 0 10 L 10 0"/>
+                            </Border>
+                        </BulletDecorator.Bullet>
+                        <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5,0,0,0"/>
+                    </BulletDecorator>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter TargetName="CheckMark" Property="Visibility" Value="Visible"/>
+                        </Trigger>
+                        <Trigger Property="IsChecked" Value="False">
+                            <Setter TargetName="CheckMark" Property="Visibility" Value="Collapsed"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+
+    </Style>
+
+</ResourceDictionary>

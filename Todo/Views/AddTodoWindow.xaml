@@ -1,0 +1,70 @@
+﻿<Window x:Class="Todo.Views.AddTodoWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Todo.Views"
+        xmlns:vm="clr-namespace:Todo.ViewModels"
+        mc:Ignorable="d"
+        Title="AddTodoWindow" 
+        Height="220" Width="375"
+        Topmost="True"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        Background="Transparent">
+    
+    <Window.DataContext>
+        <vm:AddTodoWindowViewModel/>
+    </Window.DataContext>
+
+    <Border Background="#FF3E3E3E"
+            CornerRadius="15">
+        <Grid>
+
+            <Border Background="#FF5A5A5A"
+                    Height="110" Width="340"
+                    Margin="0,0,0,80"
+                    CornerRadius="15">
+                <TextBox Height="100" Width="330"
+                         Text="{Binding Description}"
+                         FontFamily="{StaticResource Comfortaa}"
+                         Style="{StaticResource InputTextBoxStyle}"/>
+            </Border>
+
+                <Grid HorizontalAlignment="Center"
+                       VerticalAlignment="Bottom"
+                       Margin="0,0,0,12.5"
+                       Height="54"
+                       Width="325">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    
+                    <Viewbox Style="{StaticResource TransparentButtonViewBox}"
+                             Grid.Column="0">
+                        <Button Width="125" Height="50"
+                                Content="Cancel"
+                                FontFamily="{StaticResource Comfortaa}"
+                                Command="{Binding CancelCommand}"
+                                Style="{StaticResource TransparentButtonStyle}"/>   
+                    </Viewbox>
+
+                    <Viewbox Style="{StaticResource TransparentButtonViewBox}"
+                             Grid.Column="1">
+                        <Button Width="125" Height="50"
+                                Content="Accept"
+                                FontFamily="{StaticResource Comfortaa}"
+                                Command="{Binding AcceptCommand}"
+                                Style="{StaticResource TransparentButtonStyle}"/>
+                    </Viewbox>
+                    
+                </Grid>
+                
+        </Grid>
+
+    </Border>
+    
+</Window>

@@ -1,0 +1,49 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+    <ApplicationIcon>Resources\Images\1200px-GNOME_Todo_icon_2019.svg.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\Fonts\Comfortaa-SemiBold.ttf" />
+    <None Remove="Resources\Fonts\MPLUSRounded1c-Regular.ttf" />
+    <None Remove="Resources\Fonts\NotoSans-Medium.ttf" />
+    <None Remove="Resources\Fonts\NotoSans-Regular.ttf" />
+    <None Remove="Resources\Fonts\NotoSans_Condensed-Regular.ttf" />
+    <None Remove="Resources\Fonts\WorkSans-Regular.ttf" />
+    <None Remove="Resources\Images\app-ico.png" />
+    <None Remove="Resources\Images\arrow-left.png" />
+    <None Remove="Resources\Images\arrow-right.png" />
+    <None Remove="Resources\Images\more.png" />
+    <None Remove="Resources\Images\trash.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Resources\Images\1200px-GNOME_Todo_icon_2019.svg.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="FlesLib.WPF">
+      <HintPath>FlesLib.WPF.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\Fonts\Comfortaa-SemiBold.ttf" />
+    <Resource Include="Resources\Fonts\MPLUSRounded1c-Regular.ttf" />
+    <Resource Include="Resources\Fonts\NotoSans-Medium.ttf" />
+    <Resource Include="Resources\Fonts\NotoSans-Regular.ttf" />
+    <Resource Include="Resources\Fonts\WorkSans-Regular.ttf" />
+    <Resource Include="Resources\Images\app-ico.png" />
+    <Resource Include="Resources\Images\arrow-left.png" />
+    <Resource Include="Resources\Images\arrow-right.png" />
+    <Resource Include="Resources\Images\more.png" />
+    <Resource Include="Resources\Images\trash.png" />
+  </ItemGroup>
+
+</Project>
