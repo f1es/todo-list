@@ -1,3 +1,3 @@
 # todo-list
 todo list on wpf
-![alt text](https://github.com/[f1es]/[reponame]/blob/[branch]/image.jpg?raw=true)
+![alt text](https://github.com/[f1es]/[todo-list]/blob/[main]/Screenshot.png?raw=true)
